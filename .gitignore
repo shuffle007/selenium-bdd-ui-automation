@@ -1,0 +1,14 @@
+# Maven target directory
+/target/
+
+# TestNG and other test output
+/test-output/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
