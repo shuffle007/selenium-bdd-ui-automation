@@ -1,0 +1,642 @@
+<html>
+<head>
+<title>TestNG:  UpSkill Features Page</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>UpSkill Features Page</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>4/6/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Jan 25 00:45:16 EST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>130 seconds (130682 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.runners.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.runners.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Textbox Practice", "Optional[UpSkill Automation Practice]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //input[contains (@placeholder, &apos;Type to search&apos;)]&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.textBox(UpSkillPracticeActions.java:54)
+	at com.upskill.stepDef.UpSkillPracticeSteps.user_should_able_to_write_on_textbox(UpSkillPracticeSteps.java:25)
+	at ✽.User should able to write on Textbox(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:10)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[contains (@placeholder, &apos;Type to search&apos;)]&quot;}
+  (Session info: chrome=131.0.6778.265)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62854}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6e6add030b293d2766645d96ef7acce9
+*** Element info: {Using=xpath, value=//input[contains (@placeholder, &apos;Type to search&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:419)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.textBox(UpSkillPracticeActions.java:54)
+	at com.upskill.stepDef.UpSkillPracticeSteps.user_should_able_to_write_on_textbox(UpSkillPracticeSteps.java:25)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:73)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:114)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+... Removed 12 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1533390694", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1533390694'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //input[contains (@placeholder, &apos;Type to search&apos;)]&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.textBox(UpSkillPracticeActions.java:54)
+	at com.upskill.stepDef.UpSkillPracticeSteps.user_should_able_to_write_on_textbox(UpSkillPracticeSteps.java:25)
+	at ✽.User should able to write on Textbox(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:10)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[contains (@placeholder, &apos;Type to search&apos;)]&quot;}
+  (Session info: chrome=131.0.6778.265)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62854}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6e6add030b293d2766645d96ef7acce9
+*** Element info: {Using=xpath, value=//input[contains (@placeholder, &apos;Type to search&apos;)]}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:419)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.textBox(UpSkillPracticeActions.java:54)
+	at com.upskill.stepDef.UpSkillPracticeSteps.user_should_able_to_write_on_textbox(UpSkillPracticeSteps.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:73)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:114)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+</pre></div></td>
+<td>64</td>
+<td>com.runners.RunnerClass@3c46e67a</td></tr>
+<tr>
+<td title='com.runners.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.runners.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Confirm Practice", "Optional[UpSkill Automation Practice]"</td>
+<td><div><pre>org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=131.0.6778.265)
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62848}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8832842cc6fc7c98428a2c5dab562e8e
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:923)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.clickOK(UpSkillPracticeActions.java:91)
+	at com.upskill.stepDef.UpSkillPracticeSteps.click_on_ok(UpSkillPracticeSteps.java:55)
+	at ✽.Click on OK(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:44)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1521579412", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1521579412'><pre>org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=131.0.6778.265)
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62848}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8832842cc6fc7c98428a2c5dab562e8e
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:923)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.clickOK(UpSkillPracticeActions.java:91)
+	at com.upskill.stepDef.UpSkillPracticeSteps.click_on_ok(UpSkillPracticeSteps.java:55)
+	at ✽.Click on OK(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:44)
+</pre></div></td>
+<td>90</td>
+<td>com.runners.RunnerClass@3c46e67a</td></tr>
+<tr>
+<td title='com.runners.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.runners.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel Practice", "Optional[UpSkill Automation Practice]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: htmlComp-iframe (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62847}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cf0ad28765ccd9b0064ebfd59424c4b6
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.switchIframe(UpSkillPracticeActions.java:37)
+	at com.upskill.stepDef.UpSkillPracticeSteps.switch_to_practice_i_frame(UpSkillPracticeSteps.java:20)
+	at ✽.Switch to Practice iFrame(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:6)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1903284662", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1903284662'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: htmlComp-iframe (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62847}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cf0ad28765ccd9b0064ebfd59424c4b6
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.switchIframe(UpSkillPracticeActions.java:37)
+	at com.upskill.stepDef.UpSkillPracticeSteps.switch_to_practice_i_frame(UpSkillPracticeSteps.java:20)
+	at ✽.Switch to Practice iFrame(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:6)
+</pre></div></td>
+<td>120</td>
+<td>com.runners.RunnerClass@3c46e67a</td></tr>
+<tr>
+<td title='com.runners.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.runners.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Radio Button Practice", "Optional[UpSkill Automation Practice]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: htmlComp-iframe (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62844}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 32df3870dbc8caee939e8190e920f809
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.switchIframe(UpSkillPracticeActions.java:37)
+	at com.upskill.stepDef.UpSkillPracticeSteps.switch_to_practice_i_frame(UpSkillPracticeSteps.java:20)
+	at ✽.Switch to Practice iFrame(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:6)
+</pre></div><a href='#' onClick='toggleBox("stack-trace202694216", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace202694216'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: htmlComp-iframe (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62844}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 32df3870dbc8caee939e8190e920f809
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.switchIframe(UpSkillPracticeActions.java:37)
+	at com.upskill.stepDef.UpSkillPracticeSteps.switch_to_practice_i_frame(UpSkillPracticeSteps.java:20)
+	at ✽.Switch to Practice iFrame(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:6)
+</pre></div></td>
+<td>125</td>
+<td>com.runners.RunnerClass@3c46e67a</td></tr>
+<tr>
+<td title='com.runners.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.runners.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Mousehover Practice", "Optional[UpSkill Automation Practice]"</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: java.lang.reflect.InvocationTargetException
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.json.BeanToJsonConverter.convertUsingMethod(BeanToJsonConverter.java:195)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$11(BeanToJsonConverter.java:90)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$null$16(BeanToJsonConverter.java:102)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:727)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$18(BeanToJsonConverter.java:103)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$null$19(BeanToJsonConverter.java:109)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$20(BeanToJsonConverter.java:108)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.convert(BeanToJsonConverter.java:139)
+	at org.openqa.selenium.json.Json.toJson(Json.java:48)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:609)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:638)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:594)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.mouseHover(UpSkillPracticeActions.java:42)
+	at com.upskill.stepDef.UpSkillPracticeSteps.mouse_hover_to_hover_over_me(UpSkillPracticeSteps.java:30)
+	at ✽.Mouse Hover to Hover Over Me(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:14)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertUsingMethod(BeanToJsonConverter.java:191)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$11(BeanToJsonConverter.java:90)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$null$16(BeanToJsonConverter.java:102)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:727)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$18(BeanToJsonConverter.java:103)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$null$19(BeanToJsonConverter.java:109)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$20(BeanToJsonConverter.java:108)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.convert(BeanToJsonConverter.java:139)
+	at org.openqa.selenium.json.Json.toJson(Json.java:48)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:609)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:638)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:594)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.mouseHover(UpSkillPracticeActions.java:42)
+	at com.upskill.stepDef.UpSkillPracticeSteps.mouse_hover_to_hover_over_me(UpSkillPracticeSteps.java:30)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:73)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:114)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[contains(text(), &apos;Hover Over Me!&apos;)]&quot;}
+  (Session info: chrome=131.0.6778.265)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62845}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c536383b1ad9cd2e3d0e20b3216a8bc
+*** Element info: {Using=xpath, value=//button[contains(text(), &apos;Hover Over Me!&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:419)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:203)
+	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:154)
+	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+	... 68 more
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace745483970", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace745483970'><pre>org.openqa.selenium.WebDriverException: java.lang.reflect.InvocationTargetException
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.json.BeanToJsonConverter.convertUsingMethod(BeanToJsonConverter.java:195)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$11(BeanToJsonConverter.java:90)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$null$16(BeanToJsonConverter.java:102)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:727)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$18(BeanToJsonConverter.java:103)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$null$19(BeanToJsonConverter.java:109)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$20(BeanToJsonConverter.java:108)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.convert(BeanToJsonConverter.java:139)
+	at org.openqa.selenium.json.Json.toJson(Json.java:48)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:609)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:638)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:594)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.mouseHover(UpSkillPracticeActions.java:42)
+	at com.upskill.stepDef.UpSkillPracticeSteps.mouse_hover_to_hover_over_me(UpSkillPracticeSteps.java:30)
+	at ✽.Mouse Hover to Hover Over Me(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:14)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertUsingMethod(BeanToJsonConverter.java:191)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$11(BeanToJsonConverter.java:90)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$null$16(BeanToJsonConverter.java:102)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:727)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$18(BeanToJsonConverter.java:103)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$null$19(BeanToJsonConverter.java:109)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$new$20(BeanToJsonConverter.java:108)
+	at org.openqa.selenium.json.BeanToJsonConverter.lambda$convertObject$26(BeanToJsonConverter.java:171)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.openqa.selenium.json.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:171)
+	at org.openqa.selenium.json.BeanToJsonConverter.convert(BeanToJsonConverter.java:139)
+	at org.openqa.selenium.json.Json.toJson(Json.java:48)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:609)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:638)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:594)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.mouseHover(UpSkillPracticeActions.java:42)
+	at com.upskill.stepDef.UpSkillPracticeSteps.mouse_hover_to_hover_over_me(UpSkillPracticeSteps.java:30)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:73)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:114)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[contains(text(), &apos;Hover Over Me!&apos;)]&quot;}
+  (Session info: chrome=131.0.6778.265)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62845}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c536383b1ad9cd2e3d0e20b3216a8bc
+*** Element info: {Using=xpath, value=//button[contains(text(), &apos;Hover Over Me!&apos;)]}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:419)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:203)
+	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:154)
+	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 68 more
+</pre></div></td>
+<td>51</td>
+<td>com.runners.RunnerClass@3c46e67a</td></tr>
+<tr>
+<td title='com.runners.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.runners.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Switch Window Practice", "Optional[UpSkill Automation Practice]"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: htmlComp-iframe (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62853}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5456c9f53db03f0adb752ba21609c5c0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.switchIframe(UpSkillPracticeActions.java:37)
+	at com.upskill.stepDef.UpSkillPracticeSteps.switch_to_practice_i_frame(UpSkillPracticeSteps.java:20)
+	at ✽.Switch to Practice iFrame(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:6)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1293170842", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1293170842'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: htmlComp-iframe (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.12.0&apos;, revision: &apos;7c6e0b3&apos;, time: &apos;2018-05-08T14:04:26.12Z&apos;
+System info: host: &apos;MacBook-Pro.local&apos;, ip: &apos;192.168.86.21&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: /var/folders/z5/9hqynsr96qv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62853}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5456c9f53db03f0adb752ba21609c5c0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
+	at com.upskill.ActionsAndVerifications.UpSkillPracticeActions.switchIframe(UpSkillPracticeActions.java:37)
+	at com.upskill.stepDef.UpSkillPracticeSteps.switch_to_practice_i_frame(UpSkillPracticeSteps.java:20)
+	at ✽.Switch to Practice iFrame(file:///Users/shafiulahmed/eclipse-workspace/UpSkillAutomationTesting/src/test/resources/FeatureFiles/UpSkillPractice.feature:6)
+</pre></div></td>
+<td>62</td>
+<td>com.runners.RunnerClass@3c46e67a</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.runners.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.runners.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Alert Practice", "Optional[UpSkill Automation Practice]"</td>
+<td></td>
+<td>123</td>
+<td>com.runners.RunnerClass@3c46e67a</td></tr>
+<tr>
+<td title='com.runners.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.runners.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checkbox Practice", "Optional[UpSkill Automation Practice]"</td>
+<td></td>
+<td>120</td>
+<td>com.runners.RunnerClass@3c46e67a</td></tr>
+<tr>
+<td title='com.runners.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.runners.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Dropdown Practice", "Optional[UpSkill Automation Practice]"</td>
+<td></td>
+<td>90</td>
+<td>com.runners.RunnerClass@3c46e67a</td></tr>
+<tr>
+<td title='com.runners.RunnerClass.runScenario()'><b>runScenario</b><br>Test class: com.runners.RunnerClass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Iframe Courses Practice", "Optional[UpSkill Automation Practice]"</td>
+<td></td>
+<td>130</td>
+<td>com.runners.RunnerClass@3c46e67a</td></tr>
+</table><p>
+</body>
+</html>

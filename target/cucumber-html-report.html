@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+  max-width: calc(100% - 1.5em);
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow-x: auto;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  max-width: 100%;
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-attachment__text {
+  background-color: #ebebeb;
+  padding: 0.5em;
+  overflow-x: auto;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"14.0.1","implementation":{"name":"cucumber-jvm","version":"6.10.2"},"runtime":{"name":"OpenJDK 64-Bit Server VM","version":"23.0.1+11"},"os":{"name":"Mac OS X"},"cpu":{"name":"aarch64"}}},{"testRunStarted":{"timestamp":{"seconds":"1737998388","nanos":236441000}}},{"source":{"uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","data":"@regression\nFeature: UpSkill Automation Practice\n\n  Background: \n    Given Open UpSkill Automation Practice page\n    When Switch to Practice iFrame\n\n  Scenario: Textbox Practice\n    Then User should able to write on Textbox\n\n  Scenario: Mousehover Practice\n    When Mouse Hover to Hover Over Me\n    Then Click on Link\n\n  Scenario: Dropdown Practice\n    When Select Option from dropdown\n    Then Verify Option selected\n\n  Scenario: Alert Practice\n    When Click on Alert\n    Then Click on OK\n\n  Scenario: Radio Button Practice\n    Then Click on Radio 2\n\n  Scenario: Checkbox Practice\n    Then Click on Checkbox 2\n\n  Scenario: Switch Window Practice\n    When Click on Open Window\n    Then Switch to new Window\n    And Click on Courses\n\n  Scenario: Confirm Practice\n    When Click on Confirm\n    Then Click on OK\n    And Verify Great\n\n  Scenario: Cancel Practice\n    When Click on Confirm\n    Then Click on cancel\n\n  Scenario: Iframe Courses Practice\n    When Switch to iFrame Courses\n    Then Click on Courses\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","feature":{"location":{"line":2,"column":1},"tags":[{"location":{"line":1,"column":1},"name":"@regression","id":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"language":"en","keyword":"Feature","name":"UpSkill Automation Practice","children":[{"background":{"location":{"line":4,"column":3},"keyword":"Background","steps":[{"location":{"line":5,"column":5},"keyword":"Given ","text":"Open UpSkill Automation Practice page","id":"9576e9a0-0d62-43a9-b8e8-ecc8f592e887"},{"location":{"line":6,"column":5},"keyword":"When ","text":"Switch to Practice iFrame","id":"be3fae34-eb92-48b9-be12-89d0bbdafc9f"}],"id":"cd1445fc-b996-4983-be03-62fde5bd7dba"}},{"scenario":{"location":{"line":8,"column":3},"keyword":"Scenario","name":"Textbox Practice","steps":[{"location":{"line":9,"column":5},"keyword":"Then ","text":"User should able to write on Textbox","id":"badaa93c-840c-43bf-b749-3f08b31fdf5e"}],"id":"bef8cd31-f7a9-4e22-8bb9-5356dae2dddd"}},{"scenario":{"location":{"line":11,"column":3},"keyword":"Scenario","name":"Mousehover Practice","steps":[{"location":{"line":12,"column":5},"keyword":"When ","text":"Mouse Hover to Hover Over Me","id":"8cccb364-c53d-4638-86ff-010d23931bf8"},{"location":{"line":13,"column":5},"keyword":"Then ","text":"Click on Link","id":"91907847-b4f8-4144-8f99-bc5306dd1370"}],"id":"884577e4-36e6-4900-97cb-0a0a760e4183"}},{"scenario":{"location":{"line":15,"column":3},"keyword":"Scenario","name":"Dropdown Practice","steps":[{"location":{"line":16,"column":5},"keyword":"When ","text":"Select Option from dropdown","id":"2d63f1c8-738b-4a95-bdfc-9f4a4b6e14f0"},{"location":{"line":17,"column":5},"keyword":"Then ","text":"Verify Option selected","id":"128a17d1-b013-407c-8d9a-8c887f78aaf5"}],"id":"ddd767a2-8837-4840-a127-9860e0ea2bbb"}},{"scenario":{"location":{"line":19,"column":3},"keyword":"Scenario","name":"Alert Practice","steps":[{"location":{"line":20,"column":5},"keyword":"When ","text":"Click on Alert","id":"1fa81c35-38ec-4f2f-ad52-a497ad624e85"},{"location":{"line":21,"column":5},"keyword":"Then ","text":"Click on OK","id":"f6bcbdac-8277-4549-a064-b8dd62786868"}],"id":"7528354a-6d36-4560-8a2c-0b9b4a4bb927"}},{"scenario":{"location":{"line":23,"column":3},"keyword":"Scenario","name":"Radio Button Practice","steps":[{"location":{"line":24,"column":5},"keyword":"Then ","text":"Click on Radio 2","id":"d3837195-0264-409d-b488-0d5c3c6d738b"}],"id":"ae6c8438-c0fe-4e08-a56d-316450fcef32"}},{"scenario":{"location":{"line":26,"column":3},"keyword":"Scenario","name":"Checkbox Practice","steps":[{"location":{"line":27,"column":5},"keyword":"Then ","text":"Click on Checkbox 2","id":"3a4f1a08-9533-4363-9b06-44c24f691cd4"}],"id":"4d9afb43-faba-4d9b-bf97-c8103462d6b4"}},{"scenario":{"location":{"line":29,"column":3},"keyword":"Scenario","name":"Switch Window Practice","steps":[{"location":{"line":30,"column":5},"keyword":"When ","text":"Click on Open Window","id":"2dc6fd50-cdbc-4552-b5e4-54341b8b40a0"},{"location":{"line":31,"column":5},"keyword":"Then ","text":"Switch to new Window","id":"bc3dcfc1-c4b9-44a3-936c-098567debb19"},{"location":{"line":32,"column":5},"keyword":"And ","text":"Click on Courses","id":"2b062e26-f3ba-4b92-82ae-71fcbcf092f9"}],"id":"3785b8c8-f9c6-4730-a7ff-fa73a12e6cf6"}},{"scenario":{"location":{"line":34,"column":3},"keyword":"Scenario","name":"Confirm Practice","steps":[{"location":{"line":35,"column":5},"keyword":"When ","text":"Click on Confirm","id":"a5aa4e6e-968d-47c2-8ba6-fafe580ec9ce"},{"location":{"line":36,"column":5},"keyword":"Then ","text":"Click on OK","id":"95e7b6ce-0063-4dee-965e-deedcd4db811"},{"location":{"line":37,"column":5},"keyword":"And ","text":"Verify Great","id":"4b359c00-f001-4aac-b412-6a1b643f66fe"}],"id":"15b1c1d5-3863-4c7c-a73f-cb5c5cf75ca4"}},{"scenario":{"location":{"line":39,"column":3},"keyword":"Scenario","name":"Cancel Practice","steps":[{"location":{"line":40,"column":5},"keyword":"When ","text":"Click on Confirm","id":"2c01010e-d9e1-41da-b480-a73eb3c182a8"},{"location":{"line":41,"column":5},"keyword":"Then ","text":"Click on cancel","id":"5afcf14c-05a0-49f1-8cb4-9e8807aa94f8"}],"id":"483bf335-3b37-4472-892c-d552fe470590"}},{"scenario":{"location":{"line":43,"column":3},"keyword":"Scenario","name":"Iframe Courses Practice","steps":[{"location":{"line":44,"column":5},"keyword":"When ","text":"Switch to iFrame Courses","id":"50b6e74b-8491-44df-8318-2ab07f8227ab"},{"location":{"line":45,"column":5},"keyword":"Then ","text":"Click on Courses","id":"0ed16af0-022e-41b0-bee7-8bd78ffc7904"}],"id":"0bfc89d6-cbf7-44a2-9965-f321711e840c"}}]}}},{"pickle":{"id":"f0957658-552c-42bf-9679-d2b9c3bc6175","uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","name":"Textbox Practice","language":"en","steps":[{"text":"Open UpSkill Automation Practice page","id":"ecad69a8-5a4d-4103-bbc2-c905e3a79631","astNodeIds":["9576e9a0-0d62-43a9-b8e8-ecc8f592e887"]},{"text":"Switch to Practice iFrame","id":"d1e2eb44-1d4e-4e5c-9181-5a90ec0d8d80","astNodeIds":["be3fae34-eb92-48b9-be12-89d0bbdafc9f"]},{"text":"User should able to write on Textbox","id":"f578b805-a0cb-4323-883e-215c2225364e","astNodeIds":["badaa93c-840c-43bf-b749-3f08b31fdf5e"]}],"tags":[{"name":"@regression","astNodeId":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"astNodeIds":["bef8cd31-f7a9-4e22-8bb9-5356dae2dddd"]}},{"pickle":{"id":"0aa5af45-789d-4efc-ab10-404535690d4c","uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","name":"Mousehover Practice","language":"en","steps":[{"text":"Open UpSkill Automation Practice page","id":"00d6653f-4336-4b3a-8580-f07bf89102fe","astNodeIds":["9576e9a0-0d62-43a9-b8e8-ecc8f592e887"]},{"text":"Switch to Practice iFrame","id":"8eb4e4aa-554d-4895-b5e3-9a6fa4952421","astNodeIds":["be3fae34-eb92-48b9-be12-89d0bbdafc9f"]},{"text":"Mouse Hover to Hover Over Me","id":"8b7ff7ef-6ae9-4618-9097-2b83fba9b935","astNodeIds":["8cccb364-c53d-4638-86ff-010d23931bf8"]},{"text":"Click on Link","id":"bd310c08-24b8-4234-b0a5-31fbecde9926","astNodeIds":["91907847-b4f8-4144-8f99-bc5306dd1370"]}],"tags":[{"name":"@regression","astNodeId":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"astNodeIds":["884577e4-36e6-4900-97cb-0a0a760e4183"]}},{"pickle":{"id":"9d64d2ed-f3d3-45f0-bcc5-97655f545d13","uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","name":"Dropdown Practice","language":"en","steps":[{"text":"Open UpSkill Automation Practice page","id":"dd4591c4-4e17-4449-bafb-876ed701f1ec","astNodeIds":["9576e9a0-0d62-43a9-b8e8-ecc8f592e887"]},{"text":"Switch to Practice iFrame","id":"64e83e82-642a-4a66-aade-92adb7c1fa47","astNodeIds":["be3fae34-eb92-48b9-be12-89d0bbdafc9f"]},{"text":"Select Option from dropdown","id":"2247d31d-ea03-469f-8b1f-1e8adeda8fb7","astNodeIds":["2d63f1c8-738b-4a95-bdfc-9f4a4b6e14f0"]},{"text":"Verify Option selected","id":"0c7c049e-0a62-4468-a16d-bb321ead310c","astNodeIds":["128a17d1-b013-407c-8d9a-8c887f78aaf5"]}],"tags":[{"name":"@regression","astNodeId":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"astNodeIds":["ddd767a2-8837-4840-a127-9860e0ea2bbb"]}},{"pickle":{"id":"55cc64cc-d01a-4894-8f9d-246bef2832f3","uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","name":"Alert Practice","language":"en","steps":[{"text":"Open UpSkill Automation Practice page","id":"37ececc8-7d23-4a03-a0a6-a1d1b2473dae","astNodeIds":["9576e9a0-0d62-43a9-b8e8-ecc8f592e887"]},{"text":"Switch to Practice iFrame","id":"1c249314-58d1-4702-84b4-a75b9744119a","astNodeIds":["be3fae34-eb92-48b9-be12-89d0bbdafc9f"]},{"text":"Click on Alert","id":"c011c076-1c2e-4145-a867-2acd055139df","astNodeIds":["1fa81c35-38ec-4f2f-ad52-a497ad624e85"]},{"text":"Click on OK","id":"2b8b7219-c746-440d-9130-aceae0145c55","astNodeIds":["f6bcbdac-8277-4549-a064-b8dd62786868"]}],"tags":[{"name":"@regression","astNodeId":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"astNodeIds":["7528354a-6d36-4560-8a2c-0b9b4a4bb927"]}},{"pickle":{"id":"d4a03a02-6e3f-42e0-a5e1-71f0fcf78a08","uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","name":"Radio Button Practice","language":"en","steps":[{"text":"Open UpSkill Automation Practice page","id":"1b1d0cb5-4010-41c3-b301-f58af4e2513e","astNodeIds":["9576e9a0-0d62-43a9-b8e8-ecc8f592e887"]},{"text":"Switch to Practice iFrame","id":"4d9e218c-accc-4978-bffc-39b629cc89d9","astNodeIds":["be3fae34-eb92-48b9-be12-89d0bbdafc9f"]},{"text":"Click on Radio 2","id":"f5351a34-9261-4fa6-b4cb-a0f4e6caa882","astNodeIds":["d3837195-0264-409d-b488-0d5c3c6d738b"]}],"tags":[{"name":"@regression","astNodeId":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"astNodeIds":["ae6c8438-c0fe-4e08-a56d-316450fcef32"]}},{"pickle":{"id":"601ff643-d0cf-44b8-870d-d4475cf95843","uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","name":"Checkbox Practice","language":"en","steps":[{"text":"Open UpSkill Automation Practice page","id":"db7bf092-8f5e-4723-bf6d-2bb9d8e0db47","astNodeIds":["9576e9a0-0d62-43a9-b8e8-ecc8f592e887"]},{"text":"Switch to Practice iFrame","id":"085e0015-f5db-4210-a5de-dc6440228a14","astNodeIds":["be3fae34-eb92-48b9-be12-89d0bbdafc9f"]},{"text":"Click on Checkbox 2","id":"a299eaba-cd64-46a7-bd83-76c245014142","astNodeIds":["3a4f1a08-9533-4363-9b06-44c24f691cd4"]}],"tags":[{"name":"@regression","astNodeId":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"astNodeIds":["4d9afb43-faba-4d9b-bf97-c8103462d6b4"]}},{"pickle":{"id":"dc17c0f6-09b7-43f8-abb5-26e2e5c33beb","uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","name":"Switch Window Practice","language":"en","steps":[{"text":"Open UpSkill Automation Practice page","id":"d5e5c5cf-b611-4956-b8b0-cd66790a6571","astNodeIds":["9576e9a0-0d62-43a9-b8e8-ecc8f592e887"]},{"text":"Switch to Practice iFrame","id":"fcbf3528-11e2-4b73-b85e-298a2f16f2d9","astNodeIds":["be3fae34-eb92-48b9-be12-89d0bbdafc9f"]},{"text":"Click on Open Window","id":"abefc8cc-fd20-4b0e-a46c-9cd2956c9ba0","astNodeIds":["2dc6fd50-cdbc-4552-b5e4-54341b8b40a0"]},{"text":"Switch to new Window","id":"10d47752-8f2a-42a7-879b-f162ef4daa4a","astNodeIds":["bc3dcfc1-c4b9-44a3-936c-098567debb19"]},{"text":"Click on Courses","id":"94504965-cce1-4c69-9397-225d49f6efb5","astNodeIds":["2b062e26-f3ba-4b92-82ae-71fcbcf092f9"]}],"tags":[{"name":"@regression","astNodeId":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"astNodeIds":["3785b8c8-f9c6-4730-a7ff-fa73a12e6cf6"]}},{"pickle":{"id":"b0acbc52-0034-49aa-9bc2-103e44df98a1","uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","name":"Confirm Practice","language":"en","steps":[{"text":"Open UpSkill Automation Practice page","id":"5472ea71-9078-4d3f-b378-5c09d86434b2","astNodeIds":["9576e9a0-0d62-43a9-b8e8-ecc8f592e887"]},{"text":"Switch to Practice iFrame","id":"b1cb0220-7e0d-4877-80ff-d45394bafd01","astNodeIds":["be3fae34-eb92-48b9-be12-89d0bbdafc9f"]},{"text":"Click on Confirm","id":"e5bf2bee-24f4-47c4-824b-8b04890a4475","astNodeIds":["a5aa4e6e-968d-47c2-8ba6-fafe580ec9ce"]},{"text":"Click on OK","id":"a007dec2-d4bb-4974-9649-e2922b0a71fe","astNodeIds":["95e7b6ce-0063-4dee-965e-deedcd4db811"]},{"text":"Verify Great","id":"e21abf05-0ae2-4505-89ed-d472a198acfb","astNodeIds":["4b359c00-f001-4aac-b412-6a1b643f66fe"]}],"tags":[{"name":"@regression","astNodeId":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"astNodeIds":["15b1c1d5-3863-4c7c-a73f-cb5c5cf75ca4"]}},{"pickle":{"id":"615e6595-9cbb-4f2b-a27a-d633a3267cfa","uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","name":"Cancel Practice","language":"en","steps":[{"text":"Open UpSkill Automation Practice page","id":"9328323a-ac71-432b-aded-5650090f81bd","astNodeIds":["9576e9a0-0d62-43a9-b8e8-ecc8f592e887"]},{"text":"Switch to Practice iFrame","id":"a86c1dd7-4f96-4499-a85f-d664bb60930c","astNodeIds":["be3fae34-eb92-48b9-be12-89d0bbdafc9f"]},{"text":"Click on Confirm","id":"fe94118b-8598-48c5-a2ce-c7cdfa3818ac","astNodeIds":["2c01010e-d9e1-41da-b480-a73eb3c182a8"]},{"text":"Click on cancel","id":"7f7ed8d2-b293-49b9-aa8d-d59bdd765142","astNodeIds":["5afcf14c-05a0-49f1-8cb4-9e8807aa94f8"]}],"tags":[{"name":"@regression","astNodeId":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"astNodeIds":["483bf335-3b37-4472-892c-d552fe470590"]}},{"pickle":{"id":"3c4b3143-2802-472d-b862-32577a4e8826","uri":"file:///Users/shafiulahmed/eclipse-workspace/SeleniumBDD_UI_Automation/src/test/resources/FeatureFiles/UpSkillPractice.feature","name":"Iframe Courses Practice","language":"en","steps":[{"text":"Open UpSkill Automation Practice page","id":"5c226a0b-d2fa-4508-90d9-6632c188c8be","astNodeIds":["9576e9a0-0d62-43a9-b8e8-ecc8f592e887"]},{"text":"Switch to Practice iFrame","id":"3af29c69-df07-46d0-a107-1b26e169398d","astNodeIds":["be3fae34-eb92-48b9-be12-89d0bbdafc9f"]},{"text":"Switch to iFrame Courses","id":"1eaf394f-7998-41ae-824a-6db6510fee42","astNodeIds":["50b6e74b-8491-44df-8318-2ab07f8227ab"]},{"text":"Click on Courses","id":"30d7c0d7-3c14-4b39-beb6-c2125f1d8c2a","astNodeIds":["0ed16af0-022e-41b0-bee7-8bd78ffc7904"]}],"tags":[{"name":"@regression","astNodeId":"b4de2d18-84b4-4d19-84e0-7ff4caac11a7"}],"astNodeIds":["0bfc89d6-cbf7-44a2-9965-f321711e840c"]}},{"testCase":{"id":"1b3029a6-0b25-45c7-bc69-cbf3f8d39d74","pickleId":"55cc64cc-d01a-4894-8f9d-246bef2832f3","testSteps":[{"id":"11dae21a-e9a7-4fdd-b4fb-4884a86d2e7b","hookId":"2e4f5be8-2529-42c4-ae40-98e6ba97afb3"},{"id":"316aa458-8fc5-4449-8332-98a47eb100e2","pickleStepId":"37ececc8-7d23-4a03-a0a6-a1d1b2473dae","stepMatchArgumentsLists":[{}]},{"id":"5ebdc03e-c5c8-4f18-a8bb-349d7bc5850d","pickleStepId":"1c249314-58d1-4702-84b4-a75b9744119a","stepMatchArgumentsLists":[{}]},{"id":"d596aeb2-4077-42f3-85cb-385c60ebb4d4","pickleStepId":"c011c076-1c2e-4145-a867-2acd055139df","stepMatchArgumentsLists":[{}]},{"id":"29e86d30-d562-4c42-975b-6a919c34a541","pickleStepId":"2b8b7219-c746-440d-9130-aceae0145c55","stepMatchArgumentsLists":[{}]},{"id":"da83074a-9f83-4a0d-b2b4-2928555529b8","hookId":"6bdfae94-1e86-479d-90c4-a02d5cf27e43"}]}},{"testCase":{"id":"842a0bb9-bd16-4a7e-ac21-1d81f5e09dde","pickleId":"9d64d2ed-f3d3-45f0-bcc5-97655f545d13","testSteps":[{"id":"a16810de-3012-4412-a4fd-d791016fa953","hookId":"acb84172-cf8a-42cf-a73d-a1aaab1348eb"},{"id":"2722c837-a967-4b2d-9312-f100a4badd72","pickleStepId":"dd4591c4-4e17-4449-bafb-876ed701f1ec","stepMatchArgumentsLists":[{}]},{"id":"7520d743-76a1-43e5-995d-ee7316c82a33","pickleStepId":"64e83e82-642a-4a66-aade-92adb7c1fa47","stepMatchArgumentsLists":[{}]},{"id":"e0e40e78-a00b-4733-9743-58f94ff5c867","pickleStepId":"2247d31d-ea03-469f-8b1f-1e8adeda8fb7","stepMatchArgumentsLists":[{}]},{"id":"6936a64e-812a-4e4d-8d1a-755c1705297e","pickleStepId":"0c7c049e-0a62-4468-a16d-bb321ead310c","stepMatchArgumentsLists":[{}]},{"id":"fb92f718-035a-4775-86f5-03db4e69c950","hookId":"1d86db7e-87f6-4d1e-8d6e-a1c831a07821"}]}},{"testCase":{"id":"c8e1e1ae-13f7-4d45-8c29-049c48b262a8","pickleId":"3c4b3143-2802-472d-b862-32577a4e8826","testSteps":[{"id":"ec66d813-4ea2-42d4-b404-8869fd284720","hookId":"c1fbd4c9-4f8d-443c-b7fb-03618e3bdfe5"},{"id":"aed708ed-bded-456f-958a-31b71c48b7ef","pickleStepId":"5c226a0b-d2fa-4508-90d9-6632c188c8be","stepMatchArgumentsLists":[{}]},{"id":"ac761b5c-dfd6-4a72-a778-615e4fbacd93","pickleStepId":"3af29c69-df07-46d0-a107-1b26e169398d","stepMatchArgumentsLists":[{}]},{"id":"b60778b5-920c-45ee-886f-dcabd27fd4c8","pickleStepId":"1eaf394f-7998-41ae-824a-6db6510fee42","stepMatchArgumentsLists":[{}]},{"id":"8f16c4fe-484e-4f6e-bf3f-4fe90e03969b","pickleStepId":"30d7c0d7-3c14-4b39-beb6-c2125f1d8c2a","stepMatchArgumentsLists":[{}]},{"id":"d4131274-6631-4e02-a0c9-eac096d4a129","hookId":"8bc8811a-151d-4162-9fa4-88f4ca4a08f0"}]}},{"testCase":{"id":"07b586c8-cd4b-4deb-b4e4-c3efb3970bf6","pickleId":"f0957658-552c-42bf-9679-d2b9c3bc6175","testSteps":[{"id":"34dd9e43-fa96-47e7-bd97-3cb0ed785dc1","hookId":"51086d3b-5975-44fa-9acf-c5cad58ee298"},{"id":"1473f403-de4f-4ae1-ab49-7e7d7981a3ae","pickleStepId":"ecad69a8-5a4d-4103-bbc2-c905e3a79631","stepMatchArgumentsLists":[{}]},{"id":"60361018-ff3d-41be-9e56-92545f9cfd6a","pickleStepId":"d1e2eb44-1d4e-4e5c-9181-5a90ec0d8d80","stepMatchArgumentsLists":[{}]},{"id":"2305ff63-30c2-43b4-95e0-b84a8d5678fb","pickleStepId":"f578b805-a0cb-4323-883e-215c2225364e","stepMatchArgumentsLists":[{}]},{"id":"accb23c4-b3e8-4a22-9657-717697450af0","hookId":"74930854-2aee-4dd3-bbe9-ff50ec8a4a28"}]}},{"testCase":{"id":"a529e6cb-41c2-411b-817f-73869713f6dd","pickleId":"d4a03a02-6e3f-42e0-a5e1-71f0fcf78a08","testSteps":[{"id":"b8b16668-9f5d-42bd-be26-213aa66f2ef4","hookId":"6c1439b2-c33f-4787-956b-a33528ad4f08"},{"id":"b93d922c-89f0-4b3c-b633-d72b0c22a2bc","pickleStepId":"1b1d0cb5-4010-41c3-b301-f58af4e2513e","stepMatchArgumentsLists":[{}]},{"id":"6ecc86f4-0e3e-484a-adf5-95a76e955634","pickleStepId":"4d9e218c-accc-4978-bffc-39b629cc89d9","stepMatchArgumentsLists":[{}]},{"id":"9c25c6a6-6598-4167-bc82-f5ee1dd89952","pickleStepId":"f5351a34-9261-4fa6-b4cb-a0f4e6caa882","stepMatchArgumentsLists":[{}]},{"id":"aa0621f7-5c56-411c-9487-c8fdd2a8429a","hookId":"655829b5-cd08-4b4e-974b-6328cc7e76ca"}]}},{"testCase":{"id":"c99c9541-c45c-43a8-8963-aa0abb725c7c","pickleId":"0aa5af45-789d-4efc-ab10-404535690d4c","testSteps":[{"id":"856f1a88-c4f9-4b4c-b3d4-412192fa3be0","hookId":"e38cccfa-1926-4505-bf3e-6c5029aadba4"},{"id":"3b08e8d5-6e19-4471-bb06-ad5c345a1d7f","pickleStepId":"00d6653f-4336-4b3a-8580-f07bf89102fe","stepMatchArgumentsLists":[{}]},{"id":"10100c0c-9f11-404f-b2df-d791c3630084","pickleStepId":"8eb4e4aa-554d-4895-b5e3-9a6fa4952421","stepMatchArgumentsLists":[{}]},{"id":"9c0bd1cd-8c03-42dd-b5b4-bba7cb42ed7e","pickleStepId":"8b7ff7ef-6ae9-4618-9097-2b83fba9b935","stepMatchArgumentsLists":[{}]},{"id":"12b0d5f1-9ad1-4881-8a26-e8c59688edaf","pickleStepId":"bd310c08-24b8-4234-b0a5-31fbecde9926","stepMatchArgumentsLists":[{}]},{"id":"0812d01f-6417-4894-803a-585e4fa18c81","hookId":"b1d82200-4f84-491b-8b57-55abd2db13d1"}]}},{"testCase":{"id":"6214b11f-f1f9-4baf-a241-28865520b41e","pickleId":"601ff643-d0cf-44b8-870d-d4475cf95843","testSteps":[{"id":"c6cf5782-c0f1-4849-97d2-0bfd70bb423b","hookId":"846586c4-107b-47ff-9bb0-6ee740f70e7f"},{"id":"f6a7a690-aec4-404a-94f2-213491385cc9","pickleStepId":"db7bf092-8f5e-4723-bf6d-2bb9d8e0db47","stepMatchArgumentsLists":[{}]},{"id":"f88bb51c-a9c1-4adc-bc2c-966933651799","pickleStepId":"085e0015-f5db-4210-a5de-dc6440228a14","stepMatchArgumentsLists":[{}]},{"id":"9a2bde17-bbe7-417e-9a0f-2d392da2de02","pickleStepId":"a299eaba-cd64-46a7-bd83-76c245014142","stepMatchArgumentsLists":[{}]},{"id":"067e9c55-9375-4222-84cd-5dafe7c32b20","hookId":"857d6eac-cc75-470c-8ce3-fa162201ea5e"}]}},{"testCase":{"id":"a69dfc42-629b-4dfd-a4e6-3432c9c36a22","pickleId":"dc17c0f6-09b7-43f8-abb5-26e2e5c33beb","testSteps":[{"id":"819e17db-b97d-4b9e-b480-bc54e99aadb6","hookId":"620436be-313b-4814-9b9b-52645e84c5a0"},{"id":"bd9f8415-2e42-4456-a153-37698050ad4c","pickleStepId":"d5e5c5cf-b611-4956-b8b0-cd66790a6571","stepMatchArgumentsLists":[{}]},{"id":"2c92d664-284f-4dae-9536-a32f106d5d53","pickleStepId":"fcbf3528-11e2-4b73-b85e-298a2f16f2d9","stepMatchArgumentsLists":[{}]},{"id":"70e781ae-24e5-4459-8799-49fd588a7877","pickleStepId":"abefc8cc-fd20-4b0e-a46c-9cd2956c9ba0","stepMatchArgumentsLists":[{}]},{"id":"fc33f1e1-b36e-4fe6-8677-595ff52a68c0","pickleStepId":"10d47752-8f2a-42a7-879b-f162ef4daa4a","stepMatchArgumentsLists":[{}]},{"id":"c4d18305-6cf6-4ae6-a6d5-5ec4c5949090","pickleStepId":"94504965-cce1-4c69-9397-225d49f6efb5","stepMatchArgumentsLists":[{}]},{"id":"b43a28a0-c789-4822-a767-d7f31c672e42","hookId":"9e77d71e-4151-4199-8e84-5e86d5d9b69c"}]}},{"testCase":{"id":"7c315915-a3e8-457f-9c55-55c2d43af042","pickleId":"b0acbc52-0034-49aa-9bc2-103e44df98a1","testSteps":[{"id":"3eb20be7-89b6-4942-a953-515cb6df7a0c","hookId":"4ee08640-cf17-4f51-b8bc-0db37e0683ed"},{"id":"e6cc749e-cfea-42ba-982e-04ea0dd1d1fd","pickleStepId":"5472ea71-9078-4d3f-b378-5c09d86434b2","stepMatchArgumentsLists":[{}]},{"id":"1d5e50cb-5fd9-4810-9601-0fc0b448d8c6","pickleStepId":"b1cb0220-7e0d-4877-80ff-d45394bafd01","stepMatchArgumentsLists":[{}]},{"id":"bf7a5adb-d40a-44f8-8d34-2d4fa7bcc62d","pickleStepId":"e5bf2bee-24f4-47c4-824b-8b04890a4475","stepMatchArgumentsLists":[{}]},{"id":"e8c0977b-a04d-40c2-844c-39f18a500fed","pickleStepId":"a007dec2-d4bb-4974-9649-e2922b0a71fe","stepMatchArgumentsLists":[{}]},{"id":"af69bad5-c5eb-4c76-b3ec-2439fb4f28f6","pickleStepId":"e21abf05-0ae2-4505-89ed-d472a198acfb","stepMatchArgumentsLists":[{}]},{"id":"d5e36430-2b0b-4f4e-8d7f-0f29b175af71","hookId":"d3c8a77c-b621-42f0-ae08-633099c0f4bc"}]}},{"testCase":{"id":"376cb5d2-cf9c-4e32-96ca-dcce8f5e7de0","pickleId":"615e6595-9cbb-4f2b-a27a-d633a3267cfa","testSteps":[{"id":"a7632df2-e469-4c82-8d26-7704bca7da8a","hookId":"a5446d8e-7d38-4ea7-b106-f1369aa5a920"},{"id":"429d2724-4c60-4471-a5bd-22f0ae826870","pickleStepId":"9328323a-ac71-432b-aded-5650090f81bd","stepMatchArgumentsLists":[{}]},{"id":"4ddb94c4-dfb9-4634-bb8f-adc64a852d52","pickleStepId":"a86c1dd7-4f96-4499-a85f-d664bb60930c","stepMatchArgumentsLists":[{}]},{"id":"e5a47542-2399-4ce4-9e8b-4879baa9223d","pickleStepId":"fe94118b-8598-48c5-a2ce-c7cdfa3818ac","stepMatchArgumentsLists":[{}]},{"id":"ca3c6f47-bcbe-491d-b501-5d474ed721a5","pickleStepId":"7f7ed8d2-b293-49b9-aa8d-d59bdd765142","stepMatchArgumentsLists":[{}]},{"id":"d3b3c13e-ed56-4604-9f4b-448a86e56d07","hookId":"8ba36596-5e00-4209-883a-d4c602f24663"}]}},{"testCaseStarted":{"timestamp":{"seconds":"1737998388","nanos":328682000},"testCaseId":"a69dfc42-629b-4dfd-a4e6-3432c9c36a22","id":"82899a43-4274-46d5-b4bc-2555ea2d6086"}},{"testCaseStarted":{"timestamp":{"seconds":"1737998388","nanos":328251000},"testCaseId":"c99c9541-c45c-43a8-8963-aa0abb725c7c","id":"26cca600-7a38-4aaf-8afc-e36311688273"}},{"testCaseStarted":{"timestamp":{"seconds":"1737998388","nanos":327907000},"testCaseId":"07b586c8-cd4b-4deb-b4e4-c3efb3970bf6","id":"0cc16ea0-43a9-484c-9c4d-bd342a8efd70"}},{"testStepStarted":{"timestamp":{"seconds":"1737998388","nanos":376949000},"testStepId":"34dd9e43-fa96-47e7-bd97-3cb0ed785dc1","testCaseStartedId":"0cc16ea0-43a9-484c-9c4d-bd342a8efd70"}},{"testCaseStarted":{"timestamp":{"seconds":"1737998388","nanos":327439000},"testCaseId":"842a0bb9-bd16-4a7e-ac21-1d81f5e09dde","id":"12a98cdc-e4c8-4354-9fc0-5a8e553c8ae4"}},{"testCaseStarted":{"timestamp":{"seconds":"1737998388","nanos":327690000},"testCaseId":"c8e1e1ae-13f7-4d45-8c29-049c48b262a8","id":"24386636-71d3-4275-8201-92437ec44064"}},{"testCaseStarted":{"timestamp":{"seconds":"1737998388","nanos":328071000},"testCaseId":"a529e6cb-41c2-411b-817f-73869713f6dd","id":"ce66d00e-9761-4b54-8f7f-e3fa7b9dfd33"}},{"testStepStarted":{"timestamp":{"seconds":"1737998388","nanos":375729000},"testStepId":"856f1a88-c4f9-4b4c-b3d4-412192fa3be0","testCaseStartedId":"26cca600-7a38-4aaf-8afc-e36311688273"}},{"testCaseStarted":{"timestamp":{"seconds":"1737998388","nanos":328419000},"testCaseId":"6214b11f-f1f9-4baf-a241-28865520b41e","id":"77df58a9-8d5c-4d96-9763-b9283370e352"}},{"testCaseStarted":{"timestamp":{"seconds":"1737998388","nanos":328891000},"testCaseId":"7c315915-a3e8-457f-9c55-55c2d43af042","id":"914b95a5-4184-48fa-b093-e0859cd4e48f"}},{"testStepStarted":{"timestamp":{"seconds":"1737998388","nanos":375185000},"testStepId":"819e17db-b97d-4b9e-b480-bc54e99aadb6","testCaseStartedId":"82899a43-4274-46d5-b4bc-2555ea2d6086"}},{"testStepStarted":{"timestamp":{"seconds":"1737998388","nanos":378718000},"testStepId":"c6cf5782-c0f1-4849-97d2-0bfd70bb423b","testCaseStartedId":"77df58a9-8d5c-4d96-9763-b9283370e352"}},{"testCaseStarted":{"timestamp":{"seconds":"1737998388","nanos":327212000},"testCaseId":"1b3029a6-0b25-45c7-bc69-cbf3f8d39d74","id":"92f8add4-92a7-4419-bed4-8e4478d8779f"}},{"testStepStarted":{"timestamp":{"seconds":"1737998388","nanos":378416000},"testStepId":"a16810de-3012-4412-a4fd-d791016fa953","testCaseStartedId":"12a98cdc-e4c8-4354-9fc0-5a8e553c8ae4"}},{"testStepStarted":{"timestamp":{"seconds":"173
